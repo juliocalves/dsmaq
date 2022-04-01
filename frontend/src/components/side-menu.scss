@@ -1,0 +1,21 @@
+#menu-component{
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+    height: 450px;
+    border-radius: 16px;
+    background: #C6EADB;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.40);
+    margin-left: 15px;
+    margin-top: 30px;
+
+    aside {
+        display: flex;
+        flex-direction: column;
+               
+        .menu-itens {
+            display: flex;
+            flex-direction: column;        
+        }
+    }   
+}

@@ -1,0 +1,130 @@
+#header-menu-content{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    margin-left: 15px;
+    
+   
+    .content-header{
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .logo {
+            display: flex;
+            justify-content: space-around;
+            border-radius: 16px; 
+            width: 100px;
+            height: 55px;
+            cursor: pointer;
+            background: rgba(198, 234, 219, 0.6);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.40);
+            .img-logo{
+               width: 60px;
+            }
+        }
+
+        .cad-search {
+            display: flex;
+            width: 53%;
+            height: 100px;
+            align-items: center;
+
+            .new-cad{
+                display: flex;
+                width: 20%;
+                margin-left: 50px;
+            }
+            
+            .searching{
+                display: flex;
+                width: 80%;
+                height: 52px;
+                border-radius: 16px;
+                margin-left: 50px;
+                background: rgba(198, 234, 219, 0.6);
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.40);
+    
+                img{
+                    display: flex;
+                    justify-content: center;
+                    max-width: 25px;
+                    margin-left: 15px;
+                }
+    
+                input{
+                    display: flex;
+                    justify-content: center;
+                    width: 80%;
+                    height: 80%;
+                    background-color: transparent;
+                    border: 0;
+                    margin-left: 25px;
+                    margin-top: 7px;
+                    font-size: 16px;
+                }
+
+                input:focus {
+                    box-shadow: 0 0 0 0;
+                    outline: 0;
+                }
+            }
+        }      
+        
+        .user{
+            display: flex; 
+            justify-content: flex-end;
+            align-items: center;
+            width: 20%;
+            height: 100px;
+            
+            span {           
+                font-family: Lato;
+                font-size: 18px; 
+                font-style: normal;
+                font-weight: bold;
+                line-height: 24px;
+            }
+
+            img{
+                display: flex;
+                position: relative;
+                width: 50px;
+                height: 50px;
+                margin-left: 35px;
+            }  
+        } 
+        
+        .actions-header-menu{
+            display: flex;
+            justify-content: space-evenly;
+            width: 20%;
+            height: 100px;
+
+            button {
+                border: 0;
+                background-color: transparent;
+                cursor: pointer;
+            }
+
+            img {
+                display: flex;
+                width: 40px;
+               
+            }
+
+            .icon-exit{
+                width: 34px;
+            }
+
+            &::before{
+                content: '';
+                width: 0;
+                margin-top: 25px;
+                height: 50%;
+                border: 1px solid black;
+            }                 
+            
+        }
+    }
+}

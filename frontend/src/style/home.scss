@@ -1,0 +1,83 @@
+#page-home{
+   
+    .inf-page{
+        margin-left: 60px;
+        font-family: 'Lato', sans-serif;
+        font-size: 30px; 
+        font-style: normal;
+        font-weight: bold;
+        line-height: 18px;
+    }
+    
+    .sup-grafic{
+        display: flex;
+        flex-direction: column;
+
+        width: 90%;
+        height: 400px;
+        margin-left: 60px;
+    
+        .filter-sup-grafic{
+            font-size: 14px;
+            color: #828282;
+            button{
+                margin: 15px;
+                border: 0;
+                background: #C6EADB;
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        }
+
+        .inner-sup-grafic{
+            border-width: thin;
+            border-style: solid;
+            border-radius: 30px;
+            border-color: #828282 ;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.84);
+        }
+    }
+    .sub-grafic{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        height: 400px;
+        margin-left: 60px;
+        margin-top: 25px;
+
+        .pizza-grafic{
+            border-width: thin;
+            border-style: solid;
+            border-radius: 30px;
+            border-color: #828282 ;
+            width: 80%;
+            height: 80%;
+            margin-right: 25px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.84);
+        }
+        .line-grafic{
+            border-width: thin;
+            border-style: solid;
+            border-radius: 30px;
+            border-color: #828282 ;
+            width: 80%;
+            height: 80%;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.84);
+        }
+
+        .bar-grafic{
+            border-width: thin;
+            border-style: solid;
+            border-radius: 30px;
+            border-color: #828282 ;
+            width: 80%;
+            height: 80%;
+            margin-left: 25px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.84);
+        }
+    }
+}
