@@ -15,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //chama o contexto de banco de dado e indica qual banco de dados é usado
-builder.Services.AddDbContext<_DBContext>(dataBase => {
+builder.Services.AddDbContext<DataBaseContext>(dataBase => {
     dataBase.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConection"));
 });
 
@@ -24,9 +24,9 @@ builder.Services.AddCors(options =>{
     options.AddPolicy(name:dsmaqAllowSpecificOrigins,
         builder => {
             builder.WithOrigins("http://localhost:4200")
-        }
-    )
-})
+            .AllowAnyMethod().AllowAnyHeader();
+        });
+});
 
 
 
@@ -40,6 +40,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(dsmaqAllowSpecificOrigins);
 
 app.UseAuthorization();
 
