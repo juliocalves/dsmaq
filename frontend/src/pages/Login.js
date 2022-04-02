@@ -1,9 +1,28 @@
+import axios from 'axios';
+import {useState, useEffect} from 'react';
+
 import { useNavigate } from 'react-router-dom'
 import LogoImg from '../assets/img/logo.svg'
 import { Button } from '../components/ButtonTypes/Button'
 import '../style/login.scss'
 
 export function Login(){
+    const baseUrl = "https://localhost:44300/api/Users";
+    
+    const [data, setData]=useState([]);
+    
+    const requestLoginGet = async()=>{
+        await axios.get(baseUrl).then(
+            response => {
+                setData(response.data)
+            }).catch(error =>{
+                console.log(error);
+            })
+    }
+    
+    useEffect(()=>{
+        requestLoginGet();
+    })
 
     const navigator = useNavigate();
     async function handleLogin() {
