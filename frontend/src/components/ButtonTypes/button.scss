@@ -44,6 +44,10 @@
     &.active{
         background: #fff;
     }
+
+    &:hover{
+        background: rgba(198, 234, 219, 1);
+    }
 } 
 
 .iconbutton{
