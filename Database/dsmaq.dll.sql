@@ -1,3 +1,6 @@
+DROP DATABASE DSMAQ;
+GO
+
 CREATE DATABASE DSMAQ;
 
 GO
@@ -12,15 +15,6 @@ CREATE TABLE [dbo].[grupo_fornecedor](
      CONSTRAINT [PK_GRUPO_FORNECEDOR] PRIMARY KEY CLUSTERED([id]),
 );
  GO
-
-CREATE TABLE [dbo].[user](
-    [id][int] IDENTITY (1,1) NOT NULL,
-    [user_name][varchar](50) NOT NULL,
-    [password][varchar](30) NULL,
-    CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED([id]),
-    
-);
-GO
 
 
 CREATE TABLE [dbo].[fornecedor](

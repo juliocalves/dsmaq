@@ -25,12 +25,32 @@ export function HeaderMenu({
     const navigator = useNavigate();
     let location = useLocation().pathname;
     
+    
     function handleCreate() {
         navigator(`${location}/new`);
     }    
 
     function handleHome(){
         navigator('/home');
+    }
+
+    // const token = localStorage.getItem('token');
+
+    // const auth = {
+    //     headers : {
+    //         Authorization :`Bearer ${token}`
+    //     }
+    // }
+
+    
+    async function logout(){
+        try{
+            localStorage.clear();
+            localStorage.setItem('token','');
+            navigator('/');
+        }catch(error){
+            alert('não foi possível sair' + error);
+        }
     }
 
 
@@ -78,7 +98,7 @@ export function HeaderMenu({
                         <img src={notifficationIcon} alt="icon notiffications" />
                     </button>
                     <button>
-                        <img src={exitIcon} alt="icon exit" className='icon-exit' />
+                        <img src={exitIcon} alt="icon exit" className='icon-exit' onClick={logout} />
                     </button>
                 </div>
             </div>
