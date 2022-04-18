@@ -12,10 +12,13 @@
     aside {
         display: flex;
         flex-direction: column;
+        justify-content: center;
                
         .menu-itens {
             display: flex;
-            flex-direction: column;        
+            flex-direction: column;  
+            gap:30px;      
         }
-    }   
+    }
+
 }

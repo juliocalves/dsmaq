@@ -5,7 +5,8 @@ import { NewSuplyer } from "./pages/NewSuplyer";
 import { Login } from "./pages/Login";
 import { Expenses } from "./pages/Expenses";
 import { NewExpenses } from "./pages/NewExpenses";
-import { Calendar } from "./pages/Calendar";
+import {Calendar} from "./pages/Calendar";
+import { User } from "./pages/User";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path = '/' exact element = { <Login/>} />
         <Route path = "/Home" element = { <Home/> } />
+        <Route path = "/Users" element = { <User/> } />
         <Route path = "/suplyer" element = { <Suplyer/> } />
         <Route path = "/suplyer/new" element = {<NewSuplyer/> } />
         <Route path = "/expenses" element = { <Expenses/>} />

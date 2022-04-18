@@ -33,16 +33,7 @@ export function HeaderMenu({
     function handleHome(){
         navigator('/home');
     }
-
-    // const token = localStorage.getItem('token');
-
-    // const auth = {
-    //     headers : {
-    //         Authorization :`Bearer ${token}`
-    //     }
-    // }
-
-    
+   
     async function logout(){
         try{
             localStorage.clear();
@@ -77,7 +68,7 @@ export function HeaderMenu({
                     {!isHideButtonSaveForm &&
                         <div className='new-cad'>
                             <Button >
-                                <img src={saveIcon} alt="" />
+                                <img src={saveIcon} alt="novo cadastro" />
                                 <span>Salvar</span>
                             </Button>
                         </div>

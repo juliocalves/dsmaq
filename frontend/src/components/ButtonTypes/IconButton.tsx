@@ -18,7 +18,7 @@ export function IconButton({
             'iconbutton',
             {active:isActive}
         )}{...props}>
-            <img src={icon}/>
+            <img src={icon} alt=""/>
         </button>
     )
 }
