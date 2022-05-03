@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using BackendDsmaq.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,6 @@ namespace BackendDsmaq
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
             services.AddDbContext<DataBaseContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnetion"));
@@ -44,13 +43,13 @@ namespace BackendDsmaq
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<DataBaseContext>()
                 .AddDefaultTokenProviders();
-
+            
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = true,
+                        ValidateIssuer = false,
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
@@ -62,6 +61,13 @@ namespace BackendDsmaq
                 });
 
             services.AddScoped<IAuth, AuthService>();
+            services.AddScoped<ISuplyer, SuplyerService>();
+            services.AddScoped<ISuplyerGroup, SuplyerGroupService>();
+            services.AddScoped<IAddress, AddressService>();
+            services.AddScoped<ISuplyerContact, SuplyerContactService>();
+            services.AddScoped<IExpenses, ExpensesService>();
+            services.AddScoped<IPayment, PaymentService>();
+            services.AddScoped<IFormPayment, FormPaymentService>();
             services.AddCors();
 
             services.AddSwaggerGen(c =>
@@ -111,8 +117,7 @@ namespace BackendDsmaq
                 options.AllowAnyHeader();
             });
 
-            app.UseHttpsRedirection();
-
+            app.UseHttpsRedirection();       
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

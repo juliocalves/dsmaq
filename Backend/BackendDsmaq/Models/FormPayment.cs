@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BackendDsmaq.Models
 {
-    public class SuplyerGroup
+    public class FormPayment
     {
         public int Id { get; set; }
         public string Description { get; set; }

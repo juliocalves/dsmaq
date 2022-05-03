@@ -1,5 +1,5 @@
 ﻿using BackendDsmaq.Services;
-using BackendDsmaq.ViewModels;
+using BackendDsmaq.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -11,6 +11,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using BackendDsmaq.Interfaces;
 
 namespace BackendDsmaq.Controllers
 {
@@ -30,7 +31,7 @@ namespace BackendDsmaq.Controllers
         }
 
         [HttpPost("CreatUser")]
-        public async Task<ActionResult<UserToken>> CreateUser([FromBody] RegisterModel model)
+        public async Task<ActionResult<UserToken>> CreateUser([FromBody] Register model)
         {
             if (model.Password != model.ConfirmPassword)
             {
@@ -51,7 +52,7 @@ namespace BackendDsmaq.Controllers
         }
 
         [HttpPost("LoginUser")]
-        public async Task<ActionResult<UserToken>> Login([FromBody] LoginModel userInfo)
+        public async Task<ActionResult<UserToken>> Login([FromBody] Login userInfo)
         {
             var result = await _auth.Auth(userInfo.Email, userInfo.Password);
             if (result)
@@ -65,7 +66,7 @@ namespace BackendDsmaq.Controllers
             }
         }
 
-        private ActionResult<UserToken> GenerateToken(LoginModel userInfo)
+        private ActionResult<UserToken> GenerateToken(Login userInfo)
         {
             var claims = new[]
             {
