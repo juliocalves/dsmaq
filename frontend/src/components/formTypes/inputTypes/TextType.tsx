@@ -1,5 +1,4 @@
 import { InputHTMLAttributes } from "react";
-import classnames from 'classnames';
 
 import './questionstypes.scss'
 

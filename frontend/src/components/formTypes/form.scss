@@ -22,4 +22,62 @@
         width: 90%;
         margin-top: 25px;
     }
+
+    .user-form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: 240px;
+        border: 2px solid #C4C4C4;
+        border-radius: 15px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.40);
+
+        .user-form{     
+            display: flex;
+            gap:25px;
+            width: 90%;
+            margin-top: 25px;
+        }
+    }
+    
+    .suplyergroup-form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: 240px;
+        border: 2px solid #C4C4C4;
+        border-radius: 15px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.40);
+
+    }
+    
+    .suplyergroup-form{     
+        display: flex;
+        gap:25px;
+        width: 90%;
+        margin-top: 25px;
+    }
+    .form-save{     
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 25px;
+    }
+    .suplyer-group-select{
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        gap:6px;
+        select{
+            display: flex;
+            border-radius: 10px;
+            border: none;
+            background: rgba(198, 234, 219, 0.6);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            height: 50px;
+        }
+    }
 }

@@ -53,7 +53,7 @@ export function HeaderMenu({
                     {formsave:isHideButtonSaveForm},
                     )}>
                 <div className='logo'>
-                    <img onClick={handleHome} src={logo} alt="logo dsmaq" className='img-logo'/> 
+                    <img  src={logo} alt="logo dsmaq" className='img-logo'/> 
                 </div>
                 
                 <div className='cad-search'>
@@ -67,7 +67,7 @@ export function HeaderMenu({
                     }
                     {!isHideButtonSaveForm &&
                         <div className='new-cad'>
-                            <Button >
+                            <Button type='submit'>
                                 <img src={saveIcon} alt="novo cadastro" />
                                 <span>Salvar</span>
                             </Button>
