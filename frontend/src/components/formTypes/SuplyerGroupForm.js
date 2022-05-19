@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../../hooks/useApi';
 import './form.scss'
-import { TextType } from './inputTypes/TextType';
+import { TextType } from '../InputTypes/TextType'
 import saveIcon from '../../assets/img/save_icon.svg'
 import { Button } from '../ButtonTypes/Button'
 

@@ -1,0 +1,47 @@
+#page-formpayment{
+       
+    .result-list-formpayment{
+        width: 90%;
+        height: 100%;
+        max-width: 1200px;
+        margin-left: 4.5%;
+        margin-top: 2.5%;
+        .list-formpayment{
+            display: flex;
+            flex-wrap: wrap;
+            gap:15px;
+            height: 40%;
+            .card-item-formpayment{
+                display: flex;
+                flex-direction: column;
+                justify-content: inherit;
+                flex-grow: 1;
+                border-radius: 30px;
+                border-color: #828282 ;
+                min-width: 320px;
+                height: 100%;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.84);
+                .header-card-item-formpayment{
+                    width: 100%;
+                    height: 30%;
+                    display: flex;
+                    justify-content: center;  
+                    
+                    align-items: center; 
+                    background: rgba(198, 234, 219, 0.2);
+                    border-bottom: 1px solid rgba(198, 234, 219, 0.2);
+                    >label{
+                        font-size: 14px;
+                        color: black;
+                        font-weight: bold;
+                    }
+                }
+                .card-item-formpayment-content{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 5%;
+                }
+            }
+        }
+    }
+}

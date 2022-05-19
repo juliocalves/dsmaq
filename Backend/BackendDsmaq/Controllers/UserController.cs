@@ -78,7 +78,7 @@ namespace BackendDsmaq.Controllers
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:key"]));
 
             var credencials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expiration = DateTime.UtcNow.AddMinutes(20);
+            var expiration = DateTime.UtcNow.AddMinutes(180);
 
             JwtSecurityToken token = new JwtSecurityToken(
                 issuer: _configuration["Jwt: Issuer"],

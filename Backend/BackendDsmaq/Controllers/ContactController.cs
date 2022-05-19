@@ -20,7 +20,40 @@ namespace BackendDsmaq.Controllers
         {
             _suplyerService = suplyerContactService;
         }
-        //definição de rotas para contatos
+
+
+        [HttpPost("CreateSuplyerContact")]
+        public async Task<ActionResult> CreateSuplyerContact([FromBody] Contact contact)
+        {
+            try
+            {
+                await _suplyerService.CreateSuplyerContact(contact);
+                return CreatedAtRoute(nameof(GetSuplyerContactId), new { id = contact.Id}, contact );
+            }
+            catch
+            {
+                return BadRequest("Request inválido");
+            }
+        }
+       
+        [HttpGet]
+        [Route("{id:int}", Name ="GetSuplyerContactId")]
+        public async Task<ActionResult<Contact>> GetSuplyerContactId(int id)
+        {
+            try
+            {
+                var suplyerContact = await _suplyerService.GetContact(id);
+
+                if (suplyerContact == null)
+                    return NotFound($"Não existe Contado Fornecedor com id = {id}");
+                return Ok(suplyerContact);
+            }
+            catch
+            {
+                return BadRequest("Request inválido");
+            }
+        }
+
         [HttpGet("SuplyerContact")]
         public async Task<ActionResult<IAsyncEnumerable<Contact>>> GetSuplyerContact()
         {
@@ -49,39 +82,7 @@ namespace BackendDsmaq.Controllers
             {
                 return BadRequest();
             }
-        }*/
-
-        [HttpGet]
-        [Route("GetSuplyerContactId")]
-        public async Task<ActionResult<Contact>> GetSuplyerContactId(int id)
-        {
-            try
-            {
-                var suplyerContact = await _suplyerService.GetContact(id);
-
-                if (suplyerContact == null)
-                    return NotFound($"Não existe Contado Fornecedor com id = {id}");
-                return Ok(suplyerContact);
-            }
-            catch
-            {
-                return BadRequest("Request inválido");
-            }
-        }
-
-        [HttpPost("CreateSuplyerContact")]
-        public async Task<ActionResult> CreateSuplyerContact(Contact contact)
-        {
-            try
-            {
-                await _suplyerService.CreateSuplyerContact(contact);
-                return CreatedAtRoute(nameof(GetSuplyerContact), new { id = contact.Id, contact });
-            }
-            catch
-            {
-                return BadRequest("Request inválido");
-            }
-        }
+        }*/      
 
         [HttpPut("UpdateSuplyeContact")]
         public async Task<ActionResult> UpdateSuplyerContact(int id, [FromBody] Contact contact)

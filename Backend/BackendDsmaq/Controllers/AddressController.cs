@@ -22,12 +22,12 @@ namespace BackendDsmaq.Controllers
         }
 
         [HttpPost("CreateSuplyerAddress")]
-        public async Task<ActionResult> CreateSuplyerAddress(Address address)
+        public async Task<ActionResult> CreateSuplyerAddress([FromBody] Address address)
         {
             try
             {
                 await _suplyerService.CreateSuplyerAddress(address);
-                return CreatedAtRoute(nameof(GetSuplyerAddressId), new { id = address.Id, address });
+                return CreatedAtRoute(nameof(GetSuplyerAddressId), new { id = address.Id}, address );
             }
             catch
             {
@@ -52,7 +52,6 @@ namespace BackendDsmaq.Controllers
             }
         }
 
-        //definição de rotas para endereços
         [HttpGet("SuplyerAddresses")]
         public async Task<ActionResult<IAsyncEnumerable<Address>>> GetSuplyerAddresses()
         {

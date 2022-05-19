@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../../hooks/useApi';
 import './form.scss'
-import { TextType } from './inputTypes/TextType';
+import { TextType } from '../InputTypes/TextType'
 import saveIcon from '../../assets/img/save_icon.svg'
 import { Button } from '../ButtonTypes/Button'
 
@@ -49,10 +49,12 @@ export function UserForm (){
                 </div>
                 <div className="user-form">
                     <TextType name={'Senha'} innerText={'Digite a senha do usuario'}
+                            type="password"
                             value={password}
                             onChange={e=>setPassword(e.target.value)}
                             />
                     <TextType name={'Confirme a Senha'} innerText={'Confirme a senha do usuario'}
+                            type="password"
                             value={confirmPassword}
                             onChange={e=>setConfirmPassword(e.target.value)}
                             />

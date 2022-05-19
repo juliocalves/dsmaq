@@ -1,81 +1,45 @@
 #page-suplyergroup{
        
-    .suplyergroup{
-
-        display: flex;
-        flex-direction: column;
+    .result-list-suplyergroup{
         width: 90%;
-        height: 400px;
-        margin-left: 60px;
-
-        .card-view-suplyergroup{
-            margin-top: 25px;
-            border-width: thin;
-            border-style: solid;
-            border-radius: 30px;
-            border-color: #828282 ;
-            width: 100%;
-            height: 80%;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.84);
-
-            .header-card-view-suplyergroup{
-                width: 100%;
-                height: 30%;
+        height: 100%;
+        max-width: 1200px;
+        margin-left: 4.5%;
+        margin-top: 2.5%;
+        .list-suplyergroup{
+            display: flex;
+            flex-wrap: wrap;
+            gap:15px;
+            height: 40%;
+            .card-item-suplyergroup{
                 display: flex;
-                justify-content: space-between;  
-                align-items: center; 
-                background: rgba(198, 234, 219, 0.2);
-
-                border-bottom: 1px solid rgba(198, 234, 219, 0.2);
-              
-                .suplyergroup-inf{
-                    
+                flex-direction: column;
+                justify-content: inherit;
+                flex-grow: 1;
+                border-radius: 30px;
+                border-color: #828282 ;
+                min-width: 320px;
+                height: 100%;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.84);
+                .header-card-item-suplyergroup{
+                    width: 100%;
+                    height: 30%;
                     display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin: 15px;
+                    justify-content: center;  
                     
-                    img {
-                        width: 45px;
-                        margin-top: 10px;
+                    align-items: center; 
+                    background: rgba(198, 234, 219, 0.2);
+                    border-bottom: 1px solid rgba(198, 234, 219, 0.2);
+                    >label{
+                        font-size: 14px;
+                        color: black;
+                        font-weight: bold;
                     }
-
-                    .suplyergroup-inf1{
-                        margin: 15px;
-
-                        p {
-                            font-family: Lato;
-                            font-size: 18px;
-                            font-weight: bold;
-                            margin-bottom: 3px;
-                        }
-
-                        span {
-                            font-family: Lato;
-                            font-size: 14px;                            
-                        }
-                    }
-
                 }
-                .group-inf{
-                    margin-right: 15px;
-                }
-            }
-
-            .content-card-view-suplyer{
-                width: 100%;
-                height: 26%;
-                // display: flex;
-                margin: 35px;
-
-            }
-
-            .footer-card-view-suplyer{
-                display: flex;
-                justify-content: flex-end;
-                
-                Button {
-                    margin-right: 15px;
+                .card-item-suplyergroup-content{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 5%;
                 }
             }
         }

@@ -1,6 +1,6 @@
-import { UserForm } from "../components/formTypes/UserForm";
-import { HeaderMenu} from "../components/HeaderMenu";
-import { SideMenu } from "../components/SideMenu";
+import { UserForm } from "../components/FormTypes/UserForm";
+import { HeaderMenu} from "../components/Menu/HeaderMenu";
+import { SideMenu } from "../components/Menu/SideMenu";
 
 export function User(){
 

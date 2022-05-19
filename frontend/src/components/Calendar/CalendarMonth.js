@@ -1,6 +1,5 @@
 import previusIcon from "../../assets/img/previusIcon.svg";
 import nextIcon from "../../assets/img/nextIcon.svg";
-import './script';
 import './calendar.css';
 export function CalendarMonth(){
 

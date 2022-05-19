@@ -21,7 +21,6 @@ export function Login(){
         try{
             const response = await api.post('/user/loginuser',data);
 
-            localStorage.setItem('email',email);
             localStorage.setItem('token',response.data.token); 
             localStorage.setItem('expiration',response.data.expiration);
 
