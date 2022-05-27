@@ -42,7 +42,7 @@ export function SuplyerContactForm (){
 
         try{
             await api.post('/contact/createsuplyercontact',data,auth);
-            navigate('/suplyer');
+            navigate('/suplyers');
         }catch(error){
             alert('Erro ao salvar' + error);
         }

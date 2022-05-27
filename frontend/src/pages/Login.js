@@ -24,7 +24,7 @@ export function Login(){
             localStorage.setItem('token',response.data.token); 
             localStorage.setItem('expiration',response.data.expiration);
 
-            navigate('/suplyer');
+            navigate('/suplyers');
 
         }catch(error){
             alert('Login falhou' + error)

@@ -74,7 +74,7 @@ export function SuplyerForm (){
                     />
                     <div className='suplyer-group-select'>
                         <span>Grupo Fornecedor</span>
-                        <select id='suplyerGoup'
+                        <select id='suplyerGroup'
                              value={suplyerGoupId}    
                              onChange={e=> setSuplyersGroupId(e.target.value)}                   
                         >

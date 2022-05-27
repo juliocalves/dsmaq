@@ -27,7 +27,7 @@ export function SuplyerGroupForm(){
         try{
             await api.post('/suplyergroup/createsuplyergroup',data,auth);
             alert('Registrado com sucesso')
-            navigate('/suplyergroup');
+            navigate('/suplyergroups');
 
         }catch(error){
             alert('Registro falhou' + error)

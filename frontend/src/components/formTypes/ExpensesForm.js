@@ -82,7 +82,7 @@ export function ExpensesForm (){
                         value={installmentValue}
                         onChange={e=>setInstallmentValue(e.target.value)}
                     />
-                    <TextType name={'Nº Parcela'} innerText={''}
+                    <TextType name={'Nº Parcela'} innerText={'Digite o numero de parcelas'}
                         value={installmentNumber}
                         onChange={e=>setInstallmentNumber(e.target.value)}
                     />

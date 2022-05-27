@@ -8,7 +8,7 @@ import { ExpensesForm } from "../../components/FormTypes/ExpensesForm";
 export function NewExpenses(){
     return(
         <div id="page-expenses">
-            <HeaderMenu isHideButtonCreate/>
+            <HeaderMenu isHideButtonSaveForm isHideButtonCreate/>
             <main>
                 <SideMenu/>
                 <div className="main-content">

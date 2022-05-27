@@ -24,6 +24,7 @@ export function Expenses(){
             response => {setExpenses(response.data);
             },token)
         })
+    
     return(
         <div id='page-expenses'>
             <HeaderMenu isHideButtonSaveForm/>
@@ -37,7 +38,7 @@ export function Expenses(){
                                 <div className="card-view-expense">
                                     <div className="header-card-view-expense">
                                         <div className="expense-inf">
-                                            <img src={monogram} alt="" />
+                                            {/* <img src={monogram} alt="" /> */}
                                             <div className="expense-inf1">
                                                 <p>Razão Social</p>
                                                 <span>{suplyerId}</span>
@@ -47,16 +48,17 @@ export function Expenses(){
                                     </div>
                                     <div className="content-card-view-expense">
                                         <div>
-                                            <p>Data vencimento</p>
-                                            <span>{deadline}</span>
-                                        </div>
-                                        <div>
-                                            <p>Valor Parcela</p>
-                                            <span>{installmentValue}</span>
-                                        </div>
-                                        <div>
-                                            {/* <p>Realizar Pagamento</p> */}
-                                            <IconButton icon={pay} name={'payment'}/>
+                                            <div>
+                                                <p>Data vencimento</p>
+                                                <span>{deadline}</span>
+                                            </div>
+                                            <div>
+                                                <p>Valor Parcela</p>
+                                                <span>{installmentValue}</span>
+                                            </div>
+                                            {/* <div>
+                                                {/* <p>Realizar Pagamento</p> */}
+                                                {/* <IconButton icon={pay} name={'payment'}/></div> */} 
                                         </div>
                                     </div>
                                 </div>

@@ -1,11 +1,34 @@
 import previusIcon from "../../assets/img/previusIcon.svg";
 import nextIcon from "../../assets/img/nextIcon.svg";
-import './calendar.css';
+import './calendar.scss';
+import { Calendar,  dateFnsLocalizer} from "react-big-calendar";
+import format from "date-fns/format";
+import parse from "date-fns/parse"
+import startOfWeek from "date-fns/startOfWeek";
+import getDay from "date-fns/getDay";
+import React, {useState} from "react";
+import DatePicker from "react-datepicker";
+
+const locales = {
+    "pt-BR": require('date-fns/locale/pt-BR')
+}
+const localizer = dateFnsLocalizer({
+    format,
+    parse,
+    startOfWeek,
+    getDay,
+    locales,
+})
+
+
 export function CalendarMonth(){
 
     return(
         <div id="calendar-container">
-            <div className="calendar-header">
+            <Calendar localizer={localizer} 
+                starAccessor='start' 
+                endAcessor="end" />
+            {/* <div className="calendar-header">
                 <div className="calendar-navigate">
                     <button >
                         <img src={previusIcon} alt="previus" />
@@ -36,7 +59,7 @@ export function CalendarMonth(){
                 </div>
                 <div id="calendar">
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

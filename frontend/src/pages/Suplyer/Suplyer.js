@@ -13,6 +13,7 @@ import '../../style/global.scss';
 
 
 export function Suplyer(){
+    const [suplyersGroups, setSuplyersGroups] = useState([]);
 
     const [suplyers, setSuplyers] = useState([]);
     const token = localStorage.getItem('token');
@@ -27,6 +28,13 @@ export function Suplyer(){
             response => {setSuplyers(response.data);
             },token)
         })
+    
+    // useEffect(() => {
+    //     api.get(`/suplyergroup/${suplyerGoupId}`,auth).then(
+    //         response => {setSuplyersGroups(response.data);
+    //             console.log(response)
+    //         },token)
+    //     })
 
     return(
         <div id="page-suplyer">
@@ -41,7 +49,7 @@ export function Suplyer(){
                                 <div className="card-view-suplyer"  key={suplyers.id}>
                                     <div className="header-card-view-suplyer">
                                         <div className="suplyer-inf">
-                                            <img src={monogram} alt="" />
+                                            {/* <img src={monogram} alt="" /> */}
                                             <div className="suplyer-inf1">
                                                 <p>{socialRegistration}</p>
                                                 <span>{corporateName}</span>

@@ -80,8 +80,8 @@ export function HeaderMenu({
                 </div>  
 
                 <div className='user'>
-                    <span>Olá user</span>
-                    <img src={userIcon} alt="user name" />
+                    {/* <span>Olá user</span>
+                    <img src={userIcon} alt="user name" /> */}
                 </div>
                 
                 <div className='actions-header-menu'>
